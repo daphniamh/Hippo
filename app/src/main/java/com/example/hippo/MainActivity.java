@@ -18,13 +18,8 @@ import android.widget.TextView;
 
 import com.example.hippo.ui.main.SectionsPagerAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
-//public class MainActivity extends AppCompatActivity {
-
-    Button button;
-    TextView textView;
-    EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
        super.onCreate(savedInstanceState);
@@ -44,20 +39,7 @@ public class MainActivity extends AppCompatActivity {
                        .setAction("Action", null).show();
            }
        });
-        setContentView(R.layout.fragment_main); //mein Layout befindet sich in diesem Layout (View)
-        button = (Button)findViewById(R.id.button_zitat);
-        textView = (TextView) findViewById(R.id.text_view_welcome);
-        editText = (EditText) findViewById(R.id.text_edit_name);
-        final String name = editText.getText().toString(); //Problem mit dem String, Exception: null pointer, weil find View nicht funktioniert hat
-        //https://stackoverflow.com/questions/23353173/unfortunately-myapp-has-stopped-how-can-i-solve-this
-        if(button!=null){
-            button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                final String name = editText.getText().toString();
-                textView.setText("Hello " + name + "\nWelcome to Hippo");
-            }
-            });
+
         }
 
     }
-}
