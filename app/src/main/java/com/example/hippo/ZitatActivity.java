@@ -24,33 +24,29 @@ import android.widget.TextView;
 import com.example.hippo.ui.main.SectionsPagerAdapter;
 
 
-public class ZitatActivity extends Fragment {
+public class ZitatActivity extends AppCompatActivity {
     Button button;
     TextView textView;
     EditText editText;
 
-    @Nullable
+
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_zitat, container, false);
-    }
-
-
-     // setContentView(R.layout.fragment_zitat); //mein Layout befindet sich in diesem Layout (View)
-
-     // button = (Button) findViewById(R.id.button_zitat);
-     // textView = (TextView) findViewById(R.id.text_view_welcome);
-     // editText = (EditText) findViewById(R.id.text_edit_name);
-     // final String name = editText.getText().toString();
-
-     // if (button != null) {
-     //     button.setOnClickListener(new View.OnClickListener() {
-     //         @Override
-     //         public void onClick(View v) {
-     //             final String name = editText.getText().toString();
-     //             textView.setText("Hello " + name + "\nWelcome to Hippo");
-     //         }
-     //     });
-     // }}
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_zitat); //mein Layout befindet sich in diesem Layout (View
+      button = (Button) findViewById(R.id.button_zitat);
+      textView = (TextView) findViewById(R.id.text_view_welcome);
+      editText = (EditText) findViewById(R.id.text_edit_name);
+      final String name = editText.getText().toString();
+      if (button != null) {
+          button.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  final String name = editText.getText().toString();
+                  textView.setText("Hello " + name + "\nWelcome to Hippo");
+              }
+          });
+      }}
     }
 
